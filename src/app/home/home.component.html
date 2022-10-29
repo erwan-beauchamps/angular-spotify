@@ -1,0 +1,9 @@
+<mat-toolbar>
+    <span class="title">Playlists de {{name}}</span>
+  </mat-toolbar>
+<div class="main-content">
+    <mat-card class="home-card" *ngFor="let playlist of playlists" routerLink="{{'/track/' + playlist.id}}">
+        <img *ngIf="playlist.images[0]" [src]="playlist.images[0].url" class="playlist-img">
+        <p>{{playlist.name}}</p>
+    </mat-card>
+</div>

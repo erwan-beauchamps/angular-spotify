@@ -1,0 +1,12 @@
+<mat-toolbar>
+    <span class="title">
+        <mat-icon class="icon-track" fontIcon="arrow_back" routerLink="/home"></mat-icon>
+        Playlist {{name}}
+    </span>
+</mat-toolbar>
+<div class="main-content">
+    <mat-card class="home-card" *ngFor="let track of tracks" (click)="goToLink(track.external_urls.spotify)">
+        <img *ngIf="track.album.images[0]" [src]="track.album.images[0].url" class="playlist-img">
+        <p>{{track.name}}</p>
+    </mat-card>
+</div>
